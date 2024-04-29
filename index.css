@@ -206,14 +206,15 @@ body {
    display: grid;
    grid-template-columns: 1fr;
    gap: 32px;
+   padding: 16px;
  }
 
- @media (min-width: 1280px) {
+ @media (min-width: 768px) {
    .reviews-wrapper {
+      padding: 16px 64px;
       grid-template-columns: 1fr 1fr;
    }
  }
-
 
  @media (min-width: 1280px) {
    .reviews-wrapper {
@@ -237,10 +238,6 @@ body {
 
  .reviews-location {
    color: rgb(102, 102, 230);
- }
-
- .reviews-wrapper {
-   padding: 16px 64px;
  }
 
  .reviews-img {
@@ -287,9 +284,6 @@ body {
    gap:8px;
  }
 
- 
-
-
  .popupContainer {
    position: fixed;
    top: 0;
@@ -334,3 +328,45 @@ body {
  .popupLabel {
    flex-shrink: 5;
  }
+
+ .popup-item {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+ }
+
+ .input {
+   border: 1px solid black;
+   padding: 2px 4px;
+ }
+
+ .name {
+   border: 1px solid black;
+   padding: 2px 4px;
+ }
+
+ #btn-send {
+  padding: 12px 32px;
+    border-radius: 16px;
+    color:white;
+    background-color: blue;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    min-width: 48px;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    width: fit-content;
+    margin: 0 auto;
+    transition:  background-color 0.4s;
+ }
+
+ #btn-send:hover {
+   cursor: pointer;
+   background-color: rgb(8, 8, 88); 
+}
