@@ -13,27 +13,36 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const x = e.target?.closest('.popupContent')
         console.log('x:', x)
         if (!e.target?.closest('.popupContent') && isVisiblePopup ){
-            console.log('произошел клик на документ')
             popupContainer.classList.remove('isVisible')
         };
     });
     btns.forEach(btn=>{
         btn.addEventListener('click', (e)=>{
             e.stopPropagation()
-            console.log('произошел клик на кнопку')
             isVisiblePopup = true
             popupContainer.classList.add('isVisible')
-    
-    
             const btnSend = document.querySelector('#btn-send')
     
-            btnSend.addEventListener('click', (e)=>{
+            btnSend.addEventListener('click', async (e)=>{
                 e.stopPropagation()
-                console.log('произошел клик на кнопку отправить')
-                console.log(nameInput.value)
+
+                const payload = {
+                    name: nameInput.value,
+                    phone: phoneInput.value,
+                    service: 'пока тест'
+                }
+
                 nameInput.value=''
                 phoneInput.value=''
-    
+               
+                const res = await fetch('https://sheetdb.io/api/v1/xa7urttzxce7a', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json;charset=utf-8'
+                    },
+                    body: JSON.stringify(payload)
+                })
+        
                 popupContainer.classList.remove('isVisible')
             });
         });

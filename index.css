@@ -84,6 +84,10 @@ body {
     aspect-ratio: 26/16; 
  }
 
+ .card-img_2 {
+   aspect-ratio: 26/26 !important; 
+ }
+
  .card-title {
     font-weight: 600;
     font-size: 24px;
@@ -167,6 +171,10 @@ body {
    }
  }
 
+.orders-img {
+   width: 100%
+}
+
  .orders {
    display: flex;
    align-items: center;
@@ -187,7 +195,15 @@ body {
     flex-direction: column;
     gap:16px;
     align-items: center;
+    width: 100px;
+    text-align: center;
 }
+
+@media (min-width: 768px) {
+   .orders-wrapper-item {
+      width: 200px
+   }
+ }
 
 .hover-title {
     cursor: pointer;
